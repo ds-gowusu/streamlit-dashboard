@@ -8,7 +8,9 @@ st.set_page_config(layout='wide')
 
 # Load data
 #file_path = r"~/Desktop/projects/Python/py_envs/forest_ml/provenance_psp_data.csv"
-file_path = r"C:\Users\GILBERT FG\Desktop\Projects\portfolio\streamlit_proj\data\provenance_psp_data.csv"
+#file_path = r"C:\Users\GILBERT FG\Desktop\Projects\portfolio\streamlit_proj\data\provenance_psp_data.csv"
+
+file_path = r"/data/provenance_psp_data.csv"
 
 df = pd.read_csv(file_path)
 
