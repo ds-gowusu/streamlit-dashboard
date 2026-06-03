@@ -99,6 +99,66 @@ col6.metric(
 
 st.divider()
 
+# ------------------------------------------
+# Charts
+# ------------------------------------------
+
+col1, col2 =  st.columns(2)
+
+# Provenance Distribution
+
+with col1:
+	prov_counts = (
+		filtered_df['Provenance2']
+		.value_counts()
+		.reset_index()
+	)
+
+	prov_counts.columns = [
+		"Provenance",
+		"Tree Count"
+	]
+
+	fig = px.bar(
+		prov_counts,
+		x="Provenance",
+		y="Tree Count",
+		title="Tree Distribution by Provenance"
+	)
+
+	st.plotly_chart(
+		fig,
+		use_container_width=True
+	)
+
+# Age Distribution
+with col2:
+	age_counts = (
+		filtered_df['Age']
+		.value_counts()
+		.sort_index()
+		.reset_index()
+	)
+
+	age_counts.columns = [
+		"Age",
+		"Tree Count",
+	]
+
+	fig = px.bar(
+		age_counts,
+		x="Age",
+		y="Tree Count",
+		title="Tree Distribution by Age"
+	)
+
+	st.plotly_chart(
+		fig,
+		use_container_width=True
+	)
+st.divider()
+
+
 # compute plot dimension (21m x 21m) into hectare
 plot_size = (21*21)/10000
 
