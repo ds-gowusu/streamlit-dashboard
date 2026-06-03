@@ -14,6 +14,28 @@ file_path = r"data/provenance_psp_data.csv"
 
 df = pd.read_csv(file_path)
 
+# ---------------------------------------
+# Sidebar
+# ---------------------------------------
+st.sidebar.header("Filters")
+selected_age = st.sidebar.multiselect(
+	"Select Age",
+	options=sorted(df['Age'].unique()),
+	default=sorted(df['Age'].unique())
+)
+
+selected_provenance = st.sidebar.multiselect(
+	"Select Provenance",
+	options=sorted(df['Provenance2'].unique()),
+	default=sorted(df['Provenance2'].unique())
+)
+
+filtered_df = df[
+	(df['Age'].isin(selected_age))
+	& (df['Provenance2'].isin(selected_provenance))
+]
+
+
 # compute plot dimension (21m x 21m) into hectare
 plot_size = (21*21)/10000
 
