@@ -35,6 +35,69 @@ filtered_df = df[
 	& (df['Provenance2'].isin(selected_provenance))
 ]
 
+# -------------------------------------
+# Title
+# -------------------------------------
+
+st.title("Teak Provenance Analytics Dashboard")
+st.markdown(
+	"""
+	Monitoring growth performance and productivity of
+	 provenance trials using PSP data.  
+	"""
+)
+
+st.divider()
+
+# -----------------------------------------
+# KPI Section
+# -----------------------------------------
+
+total_trees = len(filtered_df)
+
+total_plots = filtered_df['Plot'].nunique()
+
+total_provenances = filtered_df['Provenance2'].nunique()
+
+avg_dbh = filtered_df['DBH'].mean()
+
+avg_height = filtered_df['Total_height'].mean()
+
+avg_basal_area = filtered_df['basal_area_m2'].mean()
+
+col1, col2, col3, col4, col5, col6 = st.columns(6)
+
+col1.metric(
+	"Trees",
+	f"{total_trees:,}"
+)
+
+col2.metric(
+	"Plots",
+	f"{total_plots:,}"
+)
+
+col3.metric(
+	"Provenances",
+	f"{total_provenances:,}"
+)
+
+col4.metric(
+	"Mean DBH (cm)",
+	f"{avg_dbh:.2f}"
+)
+
+col5.metric(
+	"Mean Height (m)",
+	f"{avg_height:.2f}"
+)
+
+col6.metric(
+	"Mean Basal Area (m2)",
+	f"{avg_basal_area:.4f}"
+)
+
+st.divider()
 
 # compute plot dimension (21m x 21m) into hectare
 plot_size = (21*21)/10000
