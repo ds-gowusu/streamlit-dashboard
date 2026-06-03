@@ -159,9 +159,6 @@ with col2:
 	)
 st.divider()
 
-# ---------------------------------------
-# ---------------------------------------
-
 
 # compute plot dimension (21m x 21m) into hectare
 plot_size = (21*21)/10000
@@ -237,25 +234,6 @@ with st.container():
         x_label="Provenance",
         y_label="Basal Area (m2/ha)"
     )
-
-
-# Summary Statistics
-st.subheader("Summary Statistics")
-
-summary = filtered_df[
-	[
-		"DBH",
-		"Total_height",
-		"Merchantable_height",
-		"basal_area_m2"
-	]
-].describe()
-
-st.dataframe(
-	summary,
-	use_container_width=True
-)
-
 
 
 
