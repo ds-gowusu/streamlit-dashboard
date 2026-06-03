@@ -3,7 +3,7 @@ import pandas as pd
 
 from utils import * 
 
-st.set_page_config(layout='wide')
+st.set_page_config(page_title='Teak Provenances Analysis',layout='wide')
 
 
 # Load data
