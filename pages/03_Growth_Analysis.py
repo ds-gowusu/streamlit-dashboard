@@ -24,3 +24,12 @@ fig = px.line(
 st.plotly_chart(fig, use_container_width=True)
 
 
+fig = px.line(
+	growth_summary,
+	x='Age',
+	y='Total_height',
+	markers=True,
+	title="Mean Total Height Growth by Age"
+)
+
+st.plotly_chart(fig, use_container_width=True)
