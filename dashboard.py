@@ -212,20 +212,20 @@ with st.container():
         default="All"
     )
     
-    filtered_df = None 
+    df_res = None 
 
     if age_option == "All":
-        filtered_df = ba_age
+        df_res = ba_age
     else:
-        filtered_df = filter_basal_for_age(ba_age, age_option)
+        df_res = filter_basal_for_age(ba_age, age_option)
 
-    #filtered_df
+   
 
     # --------------------
     # Plot view
     # --------------------
     st.bar_chart(
-        data=filtered_df,
+        data=df_res,
         x='Provenance2',
         y='ba_per_ha',
         x_label="Provenance",
