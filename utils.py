@@ -37,3 +37,11 @@ def filter_basal_for_age(df, selected_age):
 
     return ba
 
+# Mean Growth by Age
+def growth_summary(df):
+	df.groupy('Age').agg({
+		"DBH": "mean",
+		"Total_height": "mean",
+		"Merchantable_height": "mean"
+		}).reset_index()
+	
