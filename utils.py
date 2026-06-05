@@ -45,3 +45,13 @@ def growth_summary(df):
 		"Merchantable_height": "mean"
 		}).reset_index()
 	return df	
+
+
+def prov_growth(df):
+	df = df.groupby(['Age', 'Provenance2'])
+		.agg({
+			'DBH': 'mean'
+		})
+		.reset_index()
+
+	return df
