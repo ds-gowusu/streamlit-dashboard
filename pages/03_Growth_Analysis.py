@@ -1,6 +1,6 @@
 import pandas as pd
 import plotly.express as px
-import steamlit as st
+import streamlit as st
 
 from utils import growth_summary
 
