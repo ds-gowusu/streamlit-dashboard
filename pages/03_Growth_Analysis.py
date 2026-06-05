@@ -11,6 +11,8 @@ file_path = r"data/provenance_analytics.csv"
 
 df = pd.read_csv(file_path)
 
+growth_summary = growth_summary(df)
+
 fig = px.line(
 	growth_summary,
 	x='Age',
