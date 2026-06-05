@@ -1,5 +1,5 @@
 # Stems per Hectare
-def calculate_stems_per_hectare_by_plot(df, plot_size):
+def calculate_stems_per_hectare(df, plot_size):
     spha = df.groupby(['Provenance2', 'Plot']).size().reset_index(name='stems_per_plot')
     spha['stems_per_ha'] = spha['stems_per_plot'] /plot_size
 
@@ -12,7 +12,7 @@ def aggregate_stems_per_hectare_by_provenance(df):
 
 
 # Basal Area 
-def calculate_basal_area_per_hectare_by_plot(df, plot_size):
+def calculate_basal_area_per_hectare(df, plot_size):
     ba_ha = df.groupby(['Provenance2', 'Plot'])['basal_area_m2'].sum().reset_index()
 
     ba_ha['ba_per_ha'] = ba_ha['basal_area_m2'] / plot_size 

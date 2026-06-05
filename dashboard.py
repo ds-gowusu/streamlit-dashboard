@@ -161,11 +161,11 @@ st.divider()
 plot_size = (21*21)/10000
 
 # Basal Area 
-ba_df = calculate_basal_area_per_hectare_by_plot(df, plot_size)
+ba_df = calculate_basal_area_per_hectare(df, plot_size)
 ba_df = aggregate_basal_area_per_hectare_by_provenance(ba_df)
 
 # Stems Per Hectare
-spha_df = calculate_stems_per_hectare_by_plot(df, plot_size)
+spha_df = calculate_stems_per_hectare(df, plot_size)
 spha_df = aggregate_stems_per_hectare_by_provenance(spha_df)
 
 ba_age = calculate_basal_area_per_hectare_by_age_and_provenance(df, plot_size)
