@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-from utils import growth_summary, prov_growth
+from utils import growth_summary
 
 
 

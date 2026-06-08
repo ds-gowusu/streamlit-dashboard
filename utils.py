@@ -47,9 +47,8 @@ def growth_summary(df):
 	return df	
 
 
-def prov_growth(df):
-	df = df.groupby(['Age', 'Provenance2']).agg({'DBH': 'mean'}).reset_index()
-
-	return df
+#def prov_growth(df):
+#	df = df.groupby(['Age', 'Provenance2']).agg({'DBH': 'mean'}).reset_index()
+#	return df
 
 
