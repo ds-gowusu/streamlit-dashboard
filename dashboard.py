@@ -1,7 +1,6 @@
 import streamlit as st 
 import pandas as pd
 import plotly.express as px
-
 from utils import * 
 
 st.set_page_config(page_title='Teak Provenances Analysis',layout='wide')
